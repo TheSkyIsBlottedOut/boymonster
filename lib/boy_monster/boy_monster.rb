@@ -11,8 +11,12 @@ module BoyMonster
       @app.handler = ::Application.new
       @app.run
     end
-    
-    
+
+    def path(pth)
+      File.join(@root, pth)
+    end
+
+
     def load_styles
       styles = []
       Dir.glob(File.join(@root, '/css/**/*.css')).each do |stylesheet|

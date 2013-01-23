@@ -1,0 +1,7 @@
+<a href="app://default">Reload</a><br/>
+<% 1.upto(1000).each do |x| %>
+  <% r,g,b = rand(255), rand(255), rand(255) %>
+  <div style="width: 100px; height: 100px; display: inline-block; background-color: rgb(<%= r %>, <%= g %>, <%= b %>);">
+
+  </div>
+<% end %>

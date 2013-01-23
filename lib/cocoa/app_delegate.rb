@@ -5,22 +5,22 @@ module MonsterLibrary
       def initialize
         @app = NSApplication.sharedApplication
         @app.setDelegate self
-        @win = MainWindow.new(640, 480) # todo: configurable
+        @win = MainWindow.new(800, 640) # todo: configurable
         @win.delegate = self
       end
-      
+
       def handler=(klass)
         @win.web_view.handler = klass
       end
-      
+
       def handler
         @win.web_view.handler
       end
-  
+
       def windowWillClose(*args)
         exit
       end
-  
+
       def run
         @win.show
         @app.run
