@@ -6,15 +6,22 @@ module MonsterLibrary
         @win = parent
         @view = WebView.alloc.initWithFrame([0,0,@win.frame.size.width, (@win.frame.size.height - 20)])
         @view.policyDelegate = self
+        @view.UIDelegate = self
         @win.contentView.addSubview @view
         @handler = ::MonsterLibrary::RequestHandler.new
       end
-      
+
+      def webView(view,
+          contextMenuItemsForElement:element,
+          defaultMenuItems:defaultMenuItems
+        )
+        []
+      end
 
       def html=(s)
         @view.mainFrame.loadHTMLString(s, baseURL: nil)
       end
-  
+
       def webView(view,
           decidePolicyForNavigationAction: action,
           request: request,

@@ -58,7 +58,9 @@ module MonsterLibrary
       <<-HTML
       <html class="#{html_class}">
         <head>
-          <style>#{::BoyMonster.styles}</style>
+          <style>
+            #{::BoyMonster.styles}
+          </style>
         </head>
         <body>
           #{self.__request__(url_string)}
