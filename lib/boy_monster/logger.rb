@@ -4,7 +4,7 @@ module MonsterLibrary
     def initialize(stream = nil)
       @stream = stream || $>
     end
-    
+
     def <<(obj)
       case obj
       when String
@@ -12,6 +12,7 @@ module MonsterLibrary
       else
         PP.pp(obj, @stream, 80)
       end
+      @stream << $/
     end
   end
 end

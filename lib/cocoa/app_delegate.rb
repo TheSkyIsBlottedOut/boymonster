@@ -5,7 +5,7 @@ module MonsterLibrary
       def initialize
         @app = NSApplication.sharedApplication
         @app.setDelegate self
-        @win = MainWindow.new(800, 640) # todo: configurable
+        @win = MainWindow.new(960, 720) # todo: configurable
         @win.delegate = self
       end
 

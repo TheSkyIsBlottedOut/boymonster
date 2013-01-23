@@ -4,7 +4,7 @@ module MonsterLibrary
       attr_accessor :handler
       def initialize(parent)
         @win = parent
-        @view = WebView.alloc.initWithFrame([0,0,@win.frame.size.width, (@win.frame.size.height - 20)])
+        @view = WebView.alloc.initWithFrame([0,0,@win.frame.size.width, (@win.frame.size.height - 10)])
         @view.policyDelegate = self
         @view.UIDelegate = self
         @win.contentView.addSubview @view
